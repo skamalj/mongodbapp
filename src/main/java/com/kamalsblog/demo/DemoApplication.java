@@ -6,8 +6,8 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.util.Arrays;
 
-import javax.validation.Constraint;
-import javax.validation.Payload;
+import jakarta.validation.Constraint;
+import jakarta.validation.Payload;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -32,8 +32,9 @@ public class DemoApplication {
 	@Bean
 	public CommandLineRunner initializeDB() {
 		return args -> { 
-			Employee[] p = {new Employee("Kamal",40,1), 
+			Employee[] p = {new Employee("Kamal",40,1), new Employee("WonderWoman",20,3),
 					new Employee("Superman",80,2) };
+
 			personRepository.saveAll(Arrays.asList(p));
 		};	
 	}

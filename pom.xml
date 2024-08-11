@@ -16,6 +16,7 @@
   <description>Demo project for Spring Boot</description>  
   <properties> 
     <java.version>21</java.version> 
+    <azSubscription>${env.AZ_SUBSCRIPTION}</azSubscription>
   </properties>  
   <dependencies> 
     <!-- https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-starter-webmvc-ui -->
@@ -23,7 +24,7 @@
     <groupId>org.springdoc</groupId>
     <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
     <version>2.6.0</version>
-</dependency>
+</dependency> 
     <dependency> 
       <groupId>org.springframework.boot</groupId>  
       <artifactId>spring-boot-devtools</artifactId>  
@@ -46,6 +47,7 @@
     <dependency> 
       <groupId>org.springframework.boot</groupId>  
       <artifactId>spring-boot-starter-validation</artifactId> 
+      <version>3.3.2</version>
     </dependency>  
     <dependency> 
       <groupId>org.springframework.boot</groupId>  
@@ -83,14 +85,14 @@
       <plugin> 
         <groupId>com.microsoft.azure</groupId>  
         <artifactId>azure-webapp-maven-plugin</artifactId>  
-        <version>1.14.0</version>  
+        <version>2.13.0</version>  
         <configuration> 
           <schemaVersion>v2</schemaVersion>  
-          <subscriptionId>3f735773-a15a-41bf-bcb9-0217a1a1b07d</subscriptionId>  
-          <resourceGroup>mywebapprg</resourceGroup>  
+          <subscriptionId>${azSubscription}</subscriptionId>  
+          <resourceGroup>mongodbapp</resourceGroup>  
           <appName>mongodbapp</appName>  
-          <pricingTier>P1v2</pricingTier>  
-          <region>centralus</region>  
+          <pricingTier>F1</pricingTier>  
+          <region>centralindia</region>  
           <runtime> 
             <os>Linux</os>  
             <javaVersion>Java 21</javaVersion>  

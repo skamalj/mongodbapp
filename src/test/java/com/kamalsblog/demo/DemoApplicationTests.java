@@ -28,6 +28,6 @@ class DemoApplicationTests {
 	@Test
 	void getAllEmployee() {
 		ResponseEntity<Employee[]> response = requestTemplate.getForEntity("/employees", Employee[].class);
-		assertThat(response.getBody().length).isEqualTo(2);
+		assertThat(response.getBody().length).isEqualTo(3);
 	}
 }
